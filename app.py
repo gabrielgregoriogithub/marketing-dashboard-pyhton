@@ -28,7 +28,7 @@ MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    path = Path(__file__).parent / "Deel Marketing Analytics Challenge - raw_data.csv"
+    path = Path(__file__).parent / "raw_data.csv"
     df = pd.read_csv(path, sep=";", encoding="utf-8")
     df.columns = df.columns.str.strip().str.replace("\xa0", " ")
     df["Reporting Date"] = pd.to_datetime(df["Reporting Date"], dayfirst=True)
